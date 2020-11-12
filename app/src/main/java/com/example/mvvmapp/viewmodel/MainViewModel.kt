@@ -1,4 +1,4 @@
-package com.example.mvvmapp
+package com.example.mvvmapp.viewmodel
 
 import androidx.lifecycle.ViewModel
 

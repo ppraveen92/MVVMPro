@@ -1,4 +1,4 @@
-package com.example.mvvmapp
+package com.example.mvvmapp.viewmodel
 
 import android.os.CountDownTimer
 import androidx.lifecycle.LiveData
@@ -9,7 +9,8 @@ class LiveDataViewModel : ViewModel()
 {
     private lateinit var timer:CountDownTimer
     var countLiveData = MutableLiveData<Int>()
-    var finishLivedata = MutableLiveData<String>()
+     var finishLivedata = MutableLiveData<String>()
+    var setLiveCount = MutableLiveData<Long>()
 
     fun getLiveData():MutableLiveData<Int>
     {
@@ -24,10 +25,11 @@ class LiveDataViewModel : ViewModel()
 
     fun setTimer()
     {
-        timer = object :CountDownTimer(10000,1000){
+        timer = object :CountDownTimer(setLiveCount.value!!,1000){
             override fun onTick(millisUntilFinished: Long) {
                 val time = millisUntilFinished/1000
                 countLiveData.value=time.toInt()
+
             }
 
             override fun onFinish() {

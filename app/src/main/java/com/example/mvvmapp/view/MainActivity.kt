@@ -1,11 +1,12 @@
-package com.example.mvvmapp
+package com.example.mvvmapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.example.mvvmapp.R
+import com.example.mvvmapp.viewmodel.LiveDataViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val viewModelLive =ViewModelProviders.of(this).get(LiveDataViewModel::class.java)
+        viewModelLive.setLiveCount.value = 20000
         viewModelLive.setTimer()
         viewModelLive.getLiveData().observe(this, Observer {
             txtLive.text=it.toString()
