@@ -2,6 +2,7 @@ package com.example.mvvmapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -30,6 +31,11 @@ class MainActivity : AppCompatActivity() {
         viewModelLive.setTimer()
         viewModelLive.getLiveData().observe(this, Observer {
             txtLive.text=it.toString()
+        })
+
+        viewModelLive.getFinish().observe(this, Observer {
+
+            Toast.makeText(this,it,Toast.LENGTH_SHORT).show()
         })
 
 

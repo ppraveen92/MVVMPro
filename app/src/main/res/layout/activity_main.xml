@@ -5,25 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtLive"
-        />
 
     <TextView
+        android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txt"
-        />
+        android:layout_gravity="top|center"
+        android:text="MVVM Sample"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+         />
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txtLive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="countdown"
+            android:textColor="@color/colorAccent"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </LinearLayout>>
+
+
 
     <Button
+        android:visibility="gone"
         android:text="add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn"/>
+        android:id="@+id/btn"
+        tools:ignore="MissingConstraints" />
 
 </LinearLayout>

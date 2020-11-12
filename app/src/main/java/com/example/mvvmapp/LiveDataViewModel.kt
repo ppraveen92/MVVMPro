@@ -9,11 +9,18 @@ class LiveDataViewModel : ViewModel()
 {
     private lateinit var timer:CountDownTimer
     var countLiveData = MutableLiveData<Int>()
+    var finishLivedata = MutableLiveData<String>()
 
     fun getLiveData():MutableLiveData<Int>
     {
         return countLiveData
     }
+
+    fun getFinish():LiveData<String>
+    {
+        return finishLivedata
+    }
+
 
     fun setTimer()
     {
@@ -24,7 +31,7 @@ class LiveDataViewModel : ViewModel()
             }
 
             override fun onFinish() {
-
+                finishLivedata.value = "done"
             }
 
         }.start()
