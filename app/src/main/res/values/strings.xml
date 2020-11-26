@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MVVMApp</string>
+    <string name="mvvm">MVVM Sample</string>
+    <string name="countdown">countdown</string>
 </resources>
